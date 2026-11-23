@@ -36,20 +36,23 @@ namespace PRAKTIKUM2_DESKTOP_NIS_NAMA
             comboBox1 = new ComboBox();
             numericUpDown1 = new NumericUpDown();
             numericUpDown2 = new NumericUpDown();
-            textBox4 = new TextBox();
             dataGridView1 = new DataGridView();
-            kode = new DataGridViewTextBoxColumn();
-            Nama = new DataGridViewTextBoxColumn();
-            stok = new DataGridViewTextBoxColumn();
-            satuan = new DataGridViewTextBoxColumn();
-            Harga = new DataGridViewTextBoxColumn();
-            Batas = new DataGridViewTextBoxColumn();
             label1 = new Label();
             label2 = new Label();
             label3 = new Label();
             label4 = new Label();
             label5 = new Label();
             label6 = new Label();
+            kode = new DataGridViewTextBoxColumn();
+            Nama = new DataGridViewTextBoxColumn();
+            stok = new DataGridViewTextBoxColumn();
+            satuan = new DataGridViewTextBoxColumn();
+            Harga = new DataGridViewTextBoxColumn();
+            Batas = new DataGridViewTextBoxColumn();
+            Status = new DataGridViewTextBoxColumn();
+            textBox3 = new TextBox();
+            textBox4 = new TextBox();
+            label7 = new Label();
             ((System.ComponentModel.ISupportInitialize)numericUpDown1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)numericUpDown2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
@@ -94,7 +97,7 @@ namespace PRAKTIKUM2_DESKTOP_NIS_NAMA
             // 
             // textBox2
             // 
-            textBox2.Location = new Point(42, 105);
+            textBox2.Location = new Point(44, 91);
             textBox2.Name = "textBox2";
             textBox2.Size = new Size(255, 23);
             textBox2.TabIndex = 4;
@@ -102,31 +105,25 @@ namespace PRAKTIKUM2_DESKTOP_NIS_NAMA
             // comboBox1
             // 
             comboBox1.FormattingEnabled = true;
-            comboBox1.Location = new Point(42, 165);
+            comboBox1.Items.AddRange(new object[] { "Stok Aman", "Kritis / Perlu Restock", "Kritis / Perlu Restock", "Stok Aman", "Stok Aman" });
+            comboBox1.Location = new Point(44, 135);
             comboBox1.Name = "comboBox1";
             comboBox1.Size = new Size(255, 23);
             comboBox1.TabIndex = 6;
             // 
             // numericUpDown1
             // 
-            numericUpDown1.Location = new Point(42, 215);
+            numericUpDown1.Location = new Point(44, 179);
             numericUpDown1.Name = "numericUpDown1";
             numericUpDown1.Size = new Size(255, 23);
             numericUpDown1.TabIndex = 7;
             // 
             // numericUpDown2
             // 
-            numericUpDown2.Location = new Point(42, 308);
+            numericUpDown2.Location = new Point(44, 311);
             numericUpDown2.Name = "numericUpDown2";
             numericUpDown2.Size = new Size(255, 23);
             numericUpDown2.TabIndex = 8;
-            // 
-            // textBox4
-            // 
-            textBox4.Location = new Point(42, 264);
-            textBox4.Name = "textBox4";
-            textBox4.Size = new Size(255, 23);
-            textBox4.TabIndex = 9;
             // 
             // dataGridView1
             // 
@@ -134,12 +131,66 @@ namespace PRAKTIKUM2_DESKTOP_NIS_NAMA
             dataGridView1.AllowUserToDeleteRows = false;
             dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { kode, Nama, stok, satuan, Harga, Batas });
+            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { kode, Nama, stok, satuan, Harga, Batas, Status });
             dataGridView1.Location = new Point(372, 47);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.ReadOnly = true;
-            dataGridView1.Size = new Size(686, 240);
+            dataGridView1.Size = new Size(846, 240);
             dataGridView1.TabIndex = 10;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Location = new Point(42, 29);
+            label1.Name = "label1";
+            label1.Size = new Size(75, 15);
+            label1.TabIndex = 11;
+            label1.Text = "Kode Produk";
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Location = new Point(44, 73);
+            label2.Name = "label2";
+            label2.Size = new Size(80, 15);
+            label2.TabIndex = 12;
+            label2.Text = "Nama Produk";
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Location = new Point(44, 117);
+            label3.Name = "label3";
+            label3.Size = new Size(51, 15);
+            label3.TabIndex = 13;
+            label3.Text = "Kategori";
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Location = new Point(44, 161);
+            label4.Name = "label4";
+            label4.Size = new Size(30, 15);
+            label4.TabIndex = 14;
+            label4.Text = "Stok";
+            // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.Location = new Point(44, 205);
+            label5.Name = "label5";
+            label5.Size = new Size(43, 15);
+            label5.TabIndex = 15;
+            label5.Text = "Satuan";
+            // 
+            // label6
+            // 
+            label6.AutoSize = true;
+            label6.Location = new Point(44, 249);
+            label6.Name = "label6";
+            label6.Size = new Size(78, 15);
+            label6.TabIndex = 16;
+            label6.Text = "Harga Satuan";
             // 
             // kode
             // 
@@ -149,7 +200,7 @@ namespace PRAKTIKUM2_DESKTOP_NIS_NAMA
             // 
             // Nama
             // 
-            Nama.HeaderText = "Nama Bahan Baku";
+            Nama.HeaderText = "Nama Produk";
             Nama.Name = "Nama";
             Nama.ReadOnly = true;
             // 
@@ -177,65 +228,43 @@ namespace PRAKTIKUM2_DESKTOP_NIS_NAMA
             Batas.Name = "Batas";
             Batas.ReadOnly = true;
             // 
-            // label1
+            // Status
             // 
-            label1.AutoSize = true;
-            label1.Location = new Point(42, 29);
-            label1.Name = "label1";
-            label1.Size = new Size(75, 15);
-            label1.TabIndex = 11;
-            label1.Text = "Kode Produk";
+            Status.HeaderText = "Status yang Diharapkan";
+            Status.Name = "Status";
+            Status.ReadOnly = true;
             // 
-            // label2
+            // textBox3
             // 
-            label2.AutoSize = true;
-            label2.Location = new Point(42, 87);
-            label2.Name = "label2";
-            label2.Size = new Size(80, 15);
-            label2.TabIndex = 12;
-            label2.Text = "Nama Produk";
+            textBox3.Location = new Point(42, 267);
+            textBox3.Name = "textBox3";
+            textBox3.Size = new Size(255, 23);
+            textBox3.TabIndex = 17;
             // 
-            // label3
+            // textBox4
             // 
-            label3.AutoSize = true;
-            label3.Location = new Point(42, 140);
-            label3.Name = "label3";
-            label3.Size = new Size(51, 15);
-            label3.TabIndex = 13;
-            label3.Text = "Kategori";
+            textBox4.Location = new Point(44, 223);
+            textBox4.Name = "textBox4";
+            textBox4.Size = new Size(255, 23);
+            textBox4.TabIndex = 18;
             // 
-            // label4
+            // label7
             // 
-            label4.AutoSize = true;
-            label4.Location = new Point(42, 191);
-            label4.Name = "label4";
-            label4.Size = new Size(30, 15);
-            label4.TabIndex = 14;
-            label4.Text = "Stok";
-            // 
-            // label5
-            // 
-            label5.AutoSize = true;
-            label5.Location = new Point(42, 241);
-            label5.Name = "label5";
-            label5.Size = new Size(78, 15);
-            label5.TabIndex = 15;
-            label5.Text = "Harga Satuan";
-            // 
-            // label6
-            // 
-            label6.AutoSize = true;
-            label6.Location = new Point(42, 290);
-            label6.Name = "label6";
-            label6.Size = new Size(86, 15);
-            label6.TabIndex = 16;
-            label6.Text = "Stok Minimum";
+            label7.AutoSize = true;
+            label7.Location = new Point(44, 293);
+            label7.Name = "label7";
+            label7.Size = new Size(91, 15);
+            label7.TabIndex = 19;
+            label7.Text = "Batas Minimum";
             // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1098, 450);
+            ClientSize = new Size(1247, 450);
+            Controls.Add(label7);
+            Controls.Add(textBox4);
+            Controls.Add(textBox3);
             Controls.Add(label6);
             Controls.Add(label5);
             Controls.Add(label4);
@@ -243,7 +272,6 @@ namespace PRAKTIKUM2_DESKTOP_NIS_NAMA
             Controls.Add(label2);
             Controls.Add(label1);
             Controls.Add(dataGridView1);
-            Controls.Add(textBox4);
             Controls.Add(numericUpDown2);
             Controls.Add(numericUpDown1);
             Controls.Add(comboBox1);
@@ -271,19 +299,22 @@ namespace PRAKTIKUM2_DESKTOP_NIS_NAMA
         private ComboBox comboBox1;
         private NumericUpDown numericUpDown1;
         private NumericUpDown numericUpDown2;
-        private TextBox textBox4;
         private DataGridView dataGridView1;
-        private DataGridViewTextBoxColumn kode;
-        private DataGridViewTextBoxColumn Nama;
-        private DataGridViewTextBoxColumn stok;
-        private DataGridViewTextBoxColumn satuan;
-        private DataGridViewTextBoxColumn Harga;
-        private DataGridViewTextBoxColumn Batas;
         private Label label1;
         private Label label2;
         private Label label3;
         private Label label4;
         private Label label5;
         private Label label6;
+        private DataGridViewTextBoxColumn kode;
+        private DataGridViewTextBoxColumn Nama;
+        private DataGridViewTextBoxColumn stok;
+        private DataGridViewTextBoxColumn satuan;
+        private DataGridViewTextBoxColumn Harga;
+        private DataGridViewTextBoxColumn Batas;
+        private DataGridViewTextBoxColumn Status;
+        private TextBox textBox3;
+        private TextBox textBox4;
+        private Label label7;
     }
 }
